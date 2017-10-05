@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e107Theme name="BS Blog 02" version="1.0" date="2017-09-12" compatibility="2.0" >
+	<author name="fizi" url="http://fizithemes.hu" email="fizi@wsb.hu"/>
+	<summary>BS Blog 02 Bootstrap3 theme by fizi</summary>
+	<description>BS Blog 02 bootstrap 3 theme with Isotope grid layout.</description>
+  <category>blog</category>
+  <copyright>Theme by: FIZI THEMES</copyright>
+  <plugins>
+    <plugin name='social' url='core' />
+	</plugins>
+	<keywords>
+		<word>bootstrap</word>
+		<word>blog</word>
+    <word>responsive</word>
+	</keywords>
+	<screenshots>
+		<image>preview.jpg</image>
+	</screenshots>
+	<stylesheets>
+		<css file="style.css" name="Default" />
+	</stylesheets>
+	<layouts> 
+    <layout name='blog_with_sidebar' title='Blog with Left Menubar' default='true' />   
+  </layouts>
+</e107Theme>
