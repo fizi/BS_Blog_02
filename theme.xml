@@ -8,6 +8,11 @@
   <plugins>
     <plugin name='social' url='core' />
 	</plugins>
+    <libraries>
+		<library name="bootstrap" scope="all"/>
+		<library name="fontawesome" scope="all"/>
+		<library name="bootstrap.editable" scope="admin"/>
+	</libraries>
 	<keywords>
 		<word>bootstrap</word>
 		<word>blog</word>

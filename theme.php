@@ -20,8 +20,8 @@ define("BOOTSTRAP", 3);
 define("FONTAWESOME", 4);
 define('VIEWPORT', "width=device-width, initial-scale=1.0");
 
-e107::library('load', 'bootstrap');
-e107::library('load', 'fontawesome');
+//e107::library('load', 'bootstrap'); // see theme.xml
+//e107::library('load', 'fontawesome'); // see theme.xml
 
 // CDN provider for Bootswatch.
 $cndPref = e107::pref('theme', 'cdn', 'cdnjs');
@@ -53,7 +53,6 @@ e107::js("theme", 			"js/imagesloaded.pkgd.js");
 e107::js("theme", 			"js/responsive-tabs_mod_by_fizi.js");
 e107::js("theme", 			"js/jquery.lettering.js");
 e107::js("theme", 			"js/custom.js");
-                 
 
 e107::js("footer-inline", 	"$('.e-tip').tooltip({container: 'body'})"); // activate bootstrap tooltips. 
 
@@ -99,10 +98,10 @@ $LAYOUT['blog_with_sidebar'] =  "
               <span class='icon-bar'></span>
             </button>
             <span class='visible-xs visible-sm navbar-brand'>
-              <div class='sitename'><a href='".e_HTTP."index.php' title='{SITENAME}' alt='".SITENAME."'>{SITENAME}</a></div>
+              <div class='sitename'><a href='".e_HTTP."index.php' title=\"{SITENAME}\" >{SITENAME}</a></div>
             </span>
             <div class='hidden-xs hidden-sm navbar-brand'>
-              <div class='sitename'><a href='".e_HTTP."index.php' title='{SITENAME}' alt='".SITENAME."'>{SITENAME}</a></div> 
+              <div class='sitename'><a href='".e_HTTP."index.php' title=\"{SITENAME}\" >{SITENAME}</a></div> 
               <div class='sitetag'>{SITETAG}</div>
               <div class='social-connected'>
                 {XURL_ICONS}
@@ -131,11 +130,12 @@ $LAYOUT['blog_with_sidebar'] =  "
     <div class='col-md-9 col-lg-8 col-lg-offset-right-2'>
       <div class='rightcol'>
         {SETSTYLE=rightcol}
+        {ALERTS}
 {---}
         <div class='visible-xs visible-sm bottom-menus'>
           {SETSTYLE=bottomcol}
-          {MENU=1}
-          {MENU=2}
+          {MENU=3}
+          {MENU=4}
         </div>
         <div class='visible-xs visible-sm bottom-footer-info'>
           <div class='social-connected'>
@@ -152,6 +152,12 @@ $LAYOUT['blog_with_sidebar'] =  "
 
 
 function rand_tag(){
+
+		if(!file_exists(e_BASE."files/taglines.txt"))
+		{
+			return null;
+		}
+
         $tags = file(e_BASE."files/taglines.txt");
         return stripslashes(htmlspecialchars($tags[rand(0, count($tags))]));
 }
